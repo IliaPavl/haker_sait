@@ -1,2 +1,2 @@
-export const HOME_PAGE = '/news/home'
+export const HOME_PAGE = '/'
 export const NEWS_PAGE = '/news'
