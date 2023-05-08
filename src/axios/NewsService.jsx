@@ -1,4 +1,4 @@
-import { BY_ITEM, NEW_NEWS, json_format } from '../const/Consts';
+import { BY_ITEM, NEW_NEWS, USER, json_format } from '../const/Consts';
 import Api from './Api'
 
 function getNewNews() {
@@ -9,7 +9,12 @@ function getOneNews(id) {
     return Api.get(BY_ITEM + '/' + id + json_format);
 }
 
+function getAuthor(nick) {
+    return Api.get(USER + '/' + nick + json_format);
+}
+
 const NewsService = {
+    getAuthor,
     getNewNews,
     getOneNews,
 }
