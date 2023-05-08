@@ -24,7 +24,7 @@ const DateLable = ({ numberDate }) => {
     }, [numberDate])
     return (
         <>
-            {hourse}:{minutes} {day}.{month}.{year}
+            {day}.{month}.{year} {hourse}:{minutes}
         </>
     );
 };
