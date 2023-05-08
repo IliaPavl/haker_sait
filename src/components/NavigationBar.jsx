@@ -21,8 +21,11 @@ const NavigationBar = () => {
                     Hacker News
                 </Navbar.Brand>
                 <Nav className="me-auto">
-                    <Link className='navbar-brand justify-content-end d-flex nav-item' to={HOME_PAGE}>Home</Link>
-                    <Link className='navbar-brand justify-content-end d-flex nav-item' to={NEWS_PAGE+'/'+1}>News</Link>
+                    <Link
+                        className='navbar-brand justify-content-end d-flex nav-item'
+                        to={HOME_PAGE}>
+                        News
+                    </Link>
                 </Nav>
             </Container>
         </Navbar>
