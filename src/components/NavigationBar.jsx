@@ -3,7 +3,7 @@ import { Nav } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
-import { HOME_PAGE, NEWS_PAGE } from '../const/Consts';
+import { HOME_PAGE } from '../const/Consts';
 import './NavigationBar.css';
 
 const NavigationBar = () => {
