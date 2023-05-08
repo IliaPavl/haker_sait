@@ -9,10 +9,13 @@ const HomePage = () => {
     const [news, setNews] = useState([]);
     const [page, setPage] = useState([]);
 
-    useEffect(() => {
+    function getNewNews() {
         NewsService.getNewNews().then((response) => {
             setPage(response.data.slice(0, 100))
         })
+    }
+    useEffect(() => {
+        getNewNews();
     }, [])
 
 
@@ -31,16 +34,11 @@ const HomePage = () => {
         getNews();
     }, [page])
 
-    async function refresh() {
-        NewsService.getNewNews().then((response) => {
-            setPage(response.data.slice(0, 100))
-        })
-    }
     return (
         <Container fluid="md" className='mt-3 newsCard'>
             <Card>
                 <Card.Header className='newsHeader d-flex flex-row-reverse' >
-                    <div className='imgRefreshDiv' onClick={() => refresh()}>
+                    <div className='imgRefreshDiv' onClick={() => getNewNews()}>
                         <img className='imgRefresh' src={Image} alt='refresh' />
                     </div>
                 </Card.Header>
