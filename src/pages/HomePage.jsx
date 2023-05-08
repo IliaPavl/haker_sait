@@ -64,7 +64,7 @@ const HomePage = () => {
     }, [buferPage])
 
     return (
-        <Container fluid="md" className='mt-3 newsCard'>
+        <Container fluid="md" className='mt-3 mb-3 newsCard'>
             <Card>
                 <Card.Header className='newsHeader d-flex flex-row-reverse' >
                     <div className='imgRefreshDiv' onClick={() => refresh()}>

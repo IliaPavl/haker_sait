@@ -15,7 +15,7 @@ const NewsPage = () => {
         });
     }, [])
     return (
-        <Container fluid="md" className='mt-3'>
+        <Container fluid="md" className='mt-3 mb-3 '>
             <Card>
                 <Card.Body>
                     <ItemListNews
