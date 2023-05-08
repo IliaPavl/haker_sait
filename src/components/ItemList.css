@@ -6,11 +6,16 @@
 }
 
 .item .itemText {
+    width: fit-content;
     font-size: 22px;
     font-weight: 400;
     border: none;
     padding-top: 0px;
     padding-bottom: 0px;
+    cursor: pointer; 
+}
+.itemText:hover { 
+    text-decoration: underline;
 }
 
 .badgeAuthor{
