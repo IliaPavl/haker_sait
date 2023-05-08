@@ -2,7 +2,20 @@
     padding: 0px;
     border-bottom: 2px solid rgba(0, 0, 0, 0.1);
     border-right: 2px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 4px 3px 5px rgba(0,0,0,0.2)
+    box-shadow: 4px 3px 5px rgba(0, 0, 0, 0.2)
+}
+
+.itemComment {
+    padding: 0px;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-right: 2px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 3px 0px rgba(0, 0, 0, 0.2)
+}
+
+.comment {
+    padding-right: 0;
+    border: none;
+    padding-bottom: 1px;
 }
 
 .item .itemText {
@@ -12,18 +25,18 @@
     border: none;
     padding-top: 0px;
     padding-bottom: 0px;
-    cursor: pointer; 
+    cursor: pointer;
 }
-.itemText:hover { 
+
+.itemText:hover {
     text-decoration: underline;
 }
 
-.badgeAuthor{
-    margin-left: 5px;
-    margin-right: 5px;
-    background-color: rgb(25, 135, 84,0.8)!important;
+.badgeAuthor {
+    background-color: rgb(25, 135, 84, 0.8) !important;
 }
-.badgeRaiting{
+
+.badge {
     margin-left: 5px;
     margin-right: 5px;
 }
