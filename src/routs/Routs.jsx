@@ -1,4 +1,4 @@
-import { HOME_PAGE, NEWS_PAGE } from "../const/SaitUrls";
+import { HOME_PAGE, NEWS_PAGE } from "../const/Consts";
 import HomePage from "../pages/HomePage";
 import NewsPage from "../pages/NewsPage";
 
