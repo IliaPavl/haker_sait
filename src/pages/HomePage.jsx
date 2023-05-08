@@ -12,6 +12,24 @@ const HomePage = () => {
     const [allId, setAllId] = useState([]);
     const [fetch, setFetch] = useState(false);
 
+    const scroll = (e) => {
+        if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 150)
+            setFetch(true);
+    }
+
+    function getNewNews() {
+        NewsService.getNewNews().then((response) => {
+            setAllId(response.data.slice(0, 100))
+            setPage(response.data.slice(0, 20))
+            setBuferPage(response.data.slice(0, 20))
+        })
+    }
+
+    function refresh() {
+        setNews([]);
+        getNewNews();
+    }
+
     useEffect(() => {
         document.addEventListener('scroll', scroll);
         return function () {
@@ -25,23 +43,8 @@ const HomePage = () => {
             setPage(prevState => [...prevState, allId.splice(page.length, page.length + 1)])
             setFetch(false);
         }
-    }, [fetch])
-    const scroll = (e) => {
-        if (e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop + window.innerHeight) < 150)
-            setFetch(true);
-    }
+    }, [fetch,allId,page])
 
-    function getNewNews() {
-        NewsService.getNewNews().then((response) => {
-            setAllId(response.data.slice(0, 100))
-            setPage(response.data.slice(0, 20))
-            setBuferPage(response.data.slice(0, 20))
-        })
-    }
-    function refresh() {
-        setNews([]);
-        getNewNews();
-    }
     useEffect(() => {
         getNewNews();
     }, [])
