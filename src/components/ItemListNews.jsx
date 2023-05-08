@@ -6,9 +6,9 @@ import DateLable from './DateLable';
 import './ItemList.css';
 
 const ItemListNews = ({ news, saitLink, description, commentsArray }) => {
-    const link = useState(saitLink);
-    const text = useState(description);
-    const comments = useState(commentsArray);
+    const [link] = useState(saitLink);
+    const [text] = useState(description);
+    const [comments] = useState(commentsArray);
     const navigate = useNavigate();
 
     function goTo(id) {
@@ -29,10 +29,12 @@ const ItemListNews = ({ news, saitLink, description, commentsArray }) => {
             <ListGroup.Item className='itemText' onClick={() => goTo(news.id)}>
                 {news !== undefined ? news.title : ""}
             </ListGroup.Item>
+
             {text !== undefined ?
                 <ListGroup.Item className=" footer text-muted">
                     <div dangerouslySetInnerHTML={createMarkup(text)} />
                 </ListGroup.Item> : <></>}
+
             <ListGroup.Item className=" footer text-muted">
                 Author:
                 <Badge pill bg="success" className='badge badgeAuthor'>
