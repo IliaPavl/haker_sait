@@ -8,8 +8,7 @@ import './NewsPage.css';
 const NewsPage = () => {
     const [news, setNews] = useState();
     useEffect(() => {
-        let url = window.location.pathname.split('/');
-        console.log(url[2])
+        const url = window.location.pathname.split('/');
         NewsService.getOneNews(url[2]).then((res) => {
             setNews(res.data)
             console.log(res.data)

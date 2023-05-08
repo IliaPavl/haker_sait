@@ -7,7 +7,6 @@ import './ItemList.css';
 const Comments = ({ comment }) => {
     const [comments, setComments] = useState([]);
     useEffect(() => {
-        console.log(comment)
         if (comment !== undefined)
             if (comment.kids !== undefined) {
                 comment.kids.forEach(id => {
