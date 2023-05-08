@@ -1,10 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { Card, Container } from 'react-bootstrap';
+import NewsService from '../axios/NewsService';
+import Comments from '../components/Comments';
+import ItemListNews from '../components/ItemListNews';
+import './NewsPage.css';
 
 const NewsPage = () => {
+    const [news, setNews] = useState();
+    useEffect(() => {
+        let url = window.location.pathname.split('/');
+        console.log(url[2])
+        NewsService.getOneNews(url[2]).then((res) => {
+            setNews(res.data)
+            console.log(res.data)
+        });
+    }, [])
     return (
-        <div>
-            NewsPage
-        </div>
+        <Container fluid="md" className='mt-3'>
+            <Card>
+                <Card.Body>
+                    <ItemListNews
+                        news={news}
+                        key={news !== undefined ? news.id : 1}
+                        saitLink={news !== undefined ? news.url : undefined}
+                        description={news !== undefined ? news.text : undefined}
+                        commentsArray={news !== undefined ? news.descendants : undefined}
+                    />
+                    <div>
+                        <h4>Comments:</h4>
+                    </div>
+                    <Comments comment={news} />
+                </Card.Body>
+            </Card>
+        </Container>
     );
 };
 
